@@ -9,7 +9,7 @@
         </div>
 
         {{-- InputSearch --}}
-        <input wire:model.live.debounce.250ms='search' type="text"
+        <input wire:model.live.debounce.1000ms='search' type="text"
             class="bg-gray-50 capitalize h-fit w-64 p-2.5 backdrop-blur border border-white/50 text-gray-900 text-sm rounded-lg outline-none block"
             placeholder="Search..." autocomplete="off">
 

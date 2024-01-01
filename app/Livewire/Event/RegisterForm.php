@@ -35,7 +35,9 @@ class RegisterForm extends Component
     public function createNewUser()
     {
         $this->validate();
+
         $fileName = '';
+
         if ($this->image) {
             $file = $this->image;
             $fileName = Str::slug($this->name) . '-' . Str::random(8) . '.' . $file->getClientOriginalExtension();

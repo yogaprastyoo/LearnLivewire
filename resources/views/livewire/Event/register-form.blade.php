@@ -85,6 +85,11 @@
         {{-- SendingStatus --}}
         <p wire:loading.delay.longest wire:target='createNewUser' class="mt-1 text-xs text-green-600">Sending...</p>
 
+        {{-- MessageSuccess --}}
+        @if (session('success'))
+            <p class="mt-1 text-xs text-green-600">{{ session('success') }}</p>
+        @endif
+
         {{-- ButtonSubmit --}}
         <button wire:loading.attr='disabled' wire:loading.class='cursor-not-allowed'
             class="p-2 mt-5 w-full font-semibold border border-black rounded hover:bg-black hover:text-white transition-all duration-300">Submit</button>

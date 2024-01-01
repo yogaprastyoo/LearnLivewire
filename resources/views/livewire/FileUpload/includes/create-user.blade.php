@@ -11,9 +11,8 @@
         <div>
             <label for="nameInput" class="block text-sm mt-3 font-medium text-gray-700">Name</label>
             <input wire:model.blur='name' type="text" id="nameInput" name="nameInput" placeholder="Your name"
-                maxlength="60"
-                class="mt-1 p-2 capitalize border w-full rounded-md border-gray-200 shadow-sm sm:text-sm focus:outline-blue-500"
-                autocomplete="off">
+                maxlength="60" autocomplete="off"
+                class="mt-1 p-2 capitalize border w-full rounded-md border-gray-200 shadow-sm sm:text-sm focus:outline-blue-500">
             @error('name')
                 <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
             @enderror
@@ -85,6 +84,8 @@
 
         {{-- ButtonSubmit --}}
         <button wire:loading.attr='disabled' wire:loading.class='cursor-not-allowed'
-            class="p-2 mt-5 w-full font-semibold border border-black rounded hover:bg-black hover:text-white transition-all duration-300">Submit</button>
+            class="p-2 mt-5 w-full font-semibold border border-black rounded hover:bg-black hover:text-white transition-all duration-300">
+            Submit
+        </button>
     </form>
 </div>

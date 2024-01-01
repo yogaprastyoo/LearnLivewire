@@ -1,9 +1,13 @@
-<div class="shadow h-full rounded-lg w-full p-4 space-y-4 bg-white">
-    <div>
+<div>
+    {{-- Header --}}
+    <header>
         <h1 class="text-2xl font-semibold">Create User</h1>
         <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet consectetur.</p>
-    </div>
+    </header>
+
+    {{-- FormCreateUser --}}
     <form wire:submit='createNewUser'>
+        {{-- NameInput --}}
         <div>
             <label for="nameInput" class="block text-sm mt-3 font-medium text-gray-700">Name</label>
             <input wire:model.blur='name' type="text" id="nameInput" name="nameInput" placeholder="Your name"
@@ -14,6 +18,8 @@
                 <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
             @enderror
         </div>
+
+        {{-- EmailInput --}}
         <div>
             <label for="emailInput" class="block text-sm mt-3 font-medium text-gray-700">Email</label>
             <input wire:model.blur='email' id="emailInput" name="emailInput" placeholder="example@comp.com"
@@ -24,7 +30,10 @@
                 <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
             @enderror
         </div>
+
+        {{-- PasswordInput --}}
         <div class="grid grid-cols-2 gap-2">
+            {{-- Password --}}
             <div>
                 <label for="passwordInput" class="block text-sm mt-3 font-medium text-gray-700">Password</label>
                 <input wire:model.blur='password' type="password" id="passwordInput" name="passwordInput"
@@ -34,6 +43,8 @@
                     <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                 @enderror
             </div>
+
+            {{-- PasswordConfirm --}}
             <div>
                 <label for="password_confirmationInput" class="block text-sm mt-3 font-medium text-gray-700">Confirm
                     Password</label>
@@ -46,7 +57,10 @@
                 @enderror
             </div>
         </div>
+        {{-- ButtonSubmit --}}
         <button
-            class="p-2 mt-5 w-full font-semibold border border-black rounded hover:bg-black hover:text-white transition-all duration-300">Submit</button>
+            class="p-2 mt-5 w-full font-semibold border border-black rounded hover:bg-black hover:text-white transition-all duration-300">
+            Submit
+        </button>
     </form>
 </div>

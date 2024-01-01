@@ -37,8 +37,6 @@ class FileUpload extends Component
 
     public $search;
 
-
-
     public function createNewUser()
     {
         $this->validate();

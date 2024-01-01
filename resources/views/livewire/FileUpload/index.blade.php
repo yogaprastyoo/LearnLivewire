@@ -10,7 +10,7 @@
     <div class="max-w-2xl mx-auto min-h-screen flex justify-center items-center">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             {{-- FormCreateUser --}}
-            <div class="shadow h-fit rounded-lg w-full p-4 space-y-4 bg-white">
+            <div class="shadow h-full rounded-lg w-full p-4 space-y-4 bg-white">
                 @include('livewire.FileUpload.includes.create-user')
             </div>
 
