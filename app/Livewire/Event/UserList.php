@@ -3,6 +3,7 @@
 namespace App\Livewire\Event;
 
 use App\Models\User;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -29,12 +30,20 @@ class UserList extends Component
         return view('livewire.Event.includes.placeholder');
     }
 
-    public function render()
+    #[Computed()]
+    public function users()
     {
-        return view('livewire.Event.user-list', [
-            'users' => User::where('name', 'like', "%{$this->search}%")
-                ->orWhere('email', 'like', "%{$this->search}%")
-                ->paginate(4),
-        ]);
+        return User::where('name', 'like', "%{$this->search}%")
+            ->orWhere('email', 'like', "%{$this->search}%")
+            ->paginate(4);
     }
+
+    // public function render()
+    // {
+    //     return view('livewire.Event.user-list', [
+    //         'user' => User::where('name', 'like', "%{$this->search}%")
+    //             ->orWhere('email', 'like', "%{$this->search}%")
+    //             ->paginate(4)
+    //     ]);
+    // }    
 }

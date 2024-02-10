@@ -4,7 +4,7 @@
         {{-- HeaderTitle --}}
         <div>
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">List Users.</h2>
-            <p class="mt-2 leading-8 text-gray-600">Our user base is now {{ $users->total() }}.
+            <p class="mt-2 leading-8 text-gray-600">Our user base is now {{ $this->users->total() }}.
             </p>
         </div>
 
@@ -40,7 +40,7 @@
     {{-- ListUsers --}}
     <div>
         <ul role="list" class="divide-y divide-gray-100">
-            @foreach ($users as $user)
+            @foreach ($this->users as $user)
                 <li class="flex justify-between gap-x-6 py-5">
                     <div class="flex min-w-0 gap-x-4">
                         {{-- ImageUsers --}}
@@ -79,6 +79,6 @@
             @endforeach
         </ul>
         {{-- Pagination --}}
-        {{ $users->links() }}
+        {{ $this->users->links() }}
     </div>
 </div>
